@@ -1,0 +1,23 @@
+---
+- Name: Siva
+  Phone: '1245678'
+  address:
+    Street: some street
+    Area: my area
+    City: my-city
+    State: my-state
+  Skils:
+  - aws
+  - devops
+  - linux
+- Name: Suresh
+  Phone: '124567899'
+  address:
+    Street: some street-2
+    Area: my area
+    City: my-city
+    State: my-state
+  Skils:
+  - aws
+  - devops
+  - linux

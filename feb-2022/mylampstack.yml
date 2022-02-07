@@ -1,0 +1,43 @@
+---
+- name: lamp stack installation
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: update packages
+      command: apt-get update -y
+
+    - name: install apache2 on ubuntu
+      apt:
+        name: apache2
+        state: latest
+    
+    - name: enable apache2 on ubunt
+      service:
+        name: apache2 
+        enabled: yes
+    
+    - name: restart the apache2 service 
+      service:
+        name: apache2
+        state: restarted
+
+    - name: install mysql on 
+      apt:
+        name: 
+          - mysql-server
+          - mysql-client
+        state: latest
+
+    - name: start the mysql service 
+      service:
+        name: mysql
+        state: started
+
+    - name: install php on ubuntu 
+      apt:
+        name: 
+          - php 
+          - libapache2-mod-php 
+          - php-mysql
+        state: latest

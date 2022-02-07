@@ -1,0 +1,14 @@
+---
+- name: naginx installation
+  hosts: dbservers
+  become: yes
+
+  tasks:
+    - name: install nginx
+      command: amazon-linux-extras install nginx1.12 -y
+    - name: start nginx
+      command: systemctl start nginx
+    - name: enble nginx 
+      command: systemctl enable nginx
+    - name: creating index.html
+      command: echo "Hi this is helloworld" >  /usr/share/nginx/html/index.html

@@ -1,0 +1,14 @@
+---
+- name: variables examples
+  hosts: all
+  become: yes
+
+  vars:
+    - car: benz
+    - colour: white
+    - model: 2022 
+
+
+  tasks:
+    - name: print variables
+      command: echo my variable name is {{ var1[0] }}

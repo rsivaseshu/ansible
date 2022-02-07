@@ -1,0 +1,22 @@
+---
+- name: file and directory operations
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create a directory if it does not exist
+      file:
+        path: /etc/some_directory
+        state: directory
+        mode: '0755'
+    - name: create file in existing directory
+      file:
+        path: /etc/some_directory/ans_file
+        state: touch
+        mode: '777'
+    
+    - name: append data into file
+      copy:
+        dest: /etc/some_directory/ans_file
+        content: |
+          line 01
+          line 02

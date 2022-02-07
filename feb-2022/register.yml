@@ -1,0 +1,9 @@
+---
+- name: file and directory operations
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: print ip address
+      debug: 
+        msg: "my system ip address is {{ ansible_facts.eth0.ipv4.address }} "
